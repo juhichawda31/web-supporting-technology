@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Patient Form</h2>
+
+DOB: <input type="date" id="dob">
+<button onclick="calcAge()">Get Age</button>
+
+<script>
+function calcAge() {
+  let dob = new Date(document.getElementById("dob").value);
+  let age = new Date().getFullYear() - dob.getFullYear();
+  alert("Age: " + age);
+}
+</script>
+
+</body>
+</html>

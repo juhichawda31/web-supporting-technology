@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Student Registration</h2>
+
+<form onsubmit="return validateForm()">
+  Name: <input type="text" id="name"><br><br>
+  Email: <input type="text" id="email"><br><br>
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+function validateForm() {
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+
+  if (name === "" || email === "") {
+    alert("All fields required");
+    return false;
+  }
+  alert("Form Submitted Successfully");
+  return true;
+}
+</script>
+</body>
+</html>

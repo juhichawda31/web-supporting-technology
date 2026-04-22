@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1 id="title">Hello World</h1>
+<button onclick="changeText()">Change Text</button>
+<button onclick="changeColor()">Change Color</button>
+
+<script>
+function changeText() {
+    document.getElementById("title").innerText = "Text Changed!";
+}
+
+function changeColor() {
+    document.body.style.backgroundColor = "lightblue";
+}
+</script>
+
+</body>
+</html>

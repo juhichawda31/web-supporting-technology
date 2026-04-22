@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript All Functions Output</title>
+</head>
+<body>
+
+<h2>JavaScript Function Outputs</h2>
+
+<div id="output"></div>
+
+<!-- Buttons for interactive tasks -->
+<br>
+<button onclick="showTime()">Show Time</button>
+<br><br>
+
+<input type="text" id="userInput" placeholder="Enter something">
+<button onclick="showInput()">Show Input</button>
+
+<br><br>
+<div id="box" style="width:200px;height:100px;background:gray;"></div>
+<button onclick="changeColor()">Change Color</button>
+
+<br><br>
+<input type="text" id="nameField" placeholder="Enter Name">
+<button onclick="validateName()">Validate Name</button>
+
+<br><br>
+<div id="messageBox"></div>
+<button onclick="showMessage('Hello User!')">Show Message</button>
+
+<br><br>
+<form onsubmit="return validateEmployee()">
+    Name: <input type="text" id="empName"><br><br>
+    Email: <input type="text" id="empEmail"><br><br>
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+// Function to print output on page
+function print(msg) {
+    document.getElementById("output").innerHTML += msg + "<br>";
+}
+
+// 1
+function greet() {
+    print("Hello JavaScript");
+}
+
+// 2
+function square(n) {
+    return n * n;
+}
+
+// 3
+function add(a, b) {
+    return a + b;
+}
+
+// 4
+function isEven(num) {
+    return num % 2 === 0;
+}
+
+// 5
+function sayName(name) {
+    alert("Welcome " + name);
+}
+
+// 6
+function areaOfRectangle(l, w) {
+    return l * w;
+}
+
+// 7
+function maxOfTwo(a, b) {
+    return a > b ? a : b;
+}
+
+// 8
+function convertToUpper(text) {
+    return text.toUpperCase();
+}
+
+// 9
+function calculateBill(price, quantity) {
+    return price * quantity;
+}
+
+// 10
+function grade(marks) {
+    if (marks >= 80) return "A";
+    else if (marks >= 60) return "B";
+    else return "C";
+}
+
+// 11
+const multiply = (a, b) => a * b;
+
+// 12
+const isPositive = (num) => num > 0;
+
+// 13
+const cube = (n) => n * n * n;
+
+// 20
+function largestInArray(arr) {
+    return Math.max(...arr);
+}
+
+// 21
+function reverseString(str) {
+    return str.split("").reverse().join("");
+}
+
+// 22
+function countVowels(str) {
+    let count = 0;
+    let vowels = "aeiouAEIOU";
+    for (let ch of str) {
+        if (vowels.includes(ch)) count++;
+    }
+    return count;
+}
+
+// 23
+function factorial(n) {
+    let res = 1;
+    for (let i = 1; i <= n; i++) res *= i;
+    return res;
+}
+
+// 24
+function filterEven(arr) {
+    return arr.filter(n => n % 2 === 0);
+}
+
+// -------- AUTO OUTPUT WHEN PAGE LOADS --------
+greet();
+print("Square of 5: " + square(5));
+print("Add 3 + 4: " + add(3,4));
+print("Is 6 even? " + isEven(6));
+print("Area of rectangle (5,4): " + areaOfRectangle(5,4));
+print("Max of 10 and 20: " + maxOfTwo(10,20));
+print("Uppercase: " + convertToUpper("hello"));
+print("Bill: " + calculateBill(100,2));
+print("Grade (75): " + grade(75));
+print("Multiply: " + multiply(3,5));
+print("Is 10 positive? " + isPositive(10));
+print("Cube of 3: " + cube(3));
+print("Largest in [1,5,3]: " + largestInArray([1,5,3]));
+print("Reverse 'hello': " + reverseString("hello"));
+print("Vowels in 'education': " + countVowels("education"));
+print("Factorial of 5: " + factorial(5));
+print("Even numbers: " + filterEven([1,2,3,4,5]));
+
+// -------- DOM FUNCTIONS --------
+
+// 14
+function showTime() {
+    alert(new Date().toLocaleTimeString());
+}
+
+// 15
+function showInput() {
+    let val = document.getElementById("userInput").value;
+    alert(val);
+}
+
+// 16
+function changeColor() {
+    document.getElementById("box").style.backgroundColor = "blue";
+}
+
+// 17
+function validateName() {
+    let name = document.getElementById("nameField").value;
+    if (name === "") alert("Name cannot be empty");
+    else alert("Valid Name");
+}
+
+// 18
+function showMessage(msg) {
+    document.getElementById("messageBox").innerText = msg;
+}
+
+// 19
+function validateEmployee() {
+    let name = document.getElementById("empName").value;
+    let email = document.getElementById("empEmail").value;
+
+    if (name === "" || email === "") {
+        alert("All fields required");
+        return false;
+    }
+    alert("Form submitted successfully");
+    return true;
+}
+
+</script>
+
+</body>
+</html>
